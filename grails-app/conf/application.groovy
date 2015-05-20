@@ -25,22 +25,26 @@ grails {
     controllers.defaultScope = 'singleton'
     converters.encoding = 'UTF-8'
     views.default.codec = "html"
-    views.gsp {
-        encoding = 'UTF-8'
-        htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
-        codecs {
-            expression = 'html' // escapes values inside ${}
-            scriptlet = 'html' // escapes output from scriptlets in GSPs
-            taglib = 'none' // escapes output from taglibs
-            staticparts = 'none' // escapes output from static template parts
+    views {
+        gsp {
+            encoding = 'UTF-8'
+            htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
+            codecs {
+                expression = 'html' // escapes values inside ${}
+                scriptlet = 'html' // escapes output from scriptlets in GSPs
+                taglib = 'none' // escapes output from taglibs
+                staticparts = 'none' // escapes output from static template parts
+            }
         }
     }
 }
 
-info.app {
-    name = '@info.app.name@'
-    version = '@info.app.version@'
-    grailsVersion = '@info.app.grailsVersion@'
+info {
+    app {
+        name = '@info.app.name@'
+        version = '@info.app.version@'
+        grailsVersion = '@info.app.grailsVersion@'
+    }
 }
 
 spring.groovy.template['check-template-location'] = false
